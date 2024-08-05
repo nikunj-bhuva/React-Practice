@@ -1,34 +1,38 @@
-import Galleryimgurl from "./Galleryimgurl";
+import GetImageUrl from "./GalleryImageUrl";
 
-let Gallery = (props) => {
-  console.log(props);
+const Gallery = ({ name, img, profession, awards, awardName, discovered }) => {
+  console.log({ name, img, profession, awards, awardName, discovered });
+
   return (
-    <div>
-      <section className="profile">
-        <h2>{props.name}</h2>
+    <section
+      className="profile border border-2 border-secondary-subtle p-4 bg-light shadow rounded-5"
+      style={{ height: "330px" }}
+    >
+      <h2 className="mb-4">{name}</h2>
+      <div className="text-center">
         <img
-          className="avatar"
-          src={Galleryimgurl(props.img)}
-          alt={`${props.img}`}
-          width={70}
-          height={70}
+          className="avatar  rounded-5 mb-4"
+          src={GetImageUrl(img)}
+          alt={img}
+          width={80}
+          height={80}
         />
-        <ul>
-          <li>
-            <b>Profession: </b>
-            {props.profession}
-          </li>
-          <li>
-            <b>Awards: 4 </b>
-            {props.awards}
-          </li>
-          <li>
-            <b>Discovered: </b>
-          {props.discover}
-          </li>
-        </ul>
-      </section>
-    </div>
+      </div>
+      <ul>
+        <li className="mb-2">
+          <b>Profession: </b>
+          {profession}
+        </li>
+        <li className="mb-2">
+          <b>{awards}:</b>
+          {awardName}
+        </li>
+        <li className="mb-2">
+          <b>Discovered: </b>
+          {discovered}
+        </li>
+      </ul>
+    </section>
   );
 };
 

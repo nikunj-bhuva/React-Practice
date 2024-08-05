@@ -1,27 +1,37 @@
 import Gallery from "./Components/Gallery";
+import GalleryImageUrl from "./Components/GalleryImageUrl";
 
-let App = () => {
+function App() {
   return (
-    <div className="container">
-      <h1>Notable Scientists</h1>
-      <div className="d-flex">
-        <Gallery
-          name="Maria Skłodowska-Curie"
-          img={"szV5sdG"}
-          profession="physicist and chemist"
-          awards="(Nobel Prize in Physics, Nobel Prize in Chemistry, Davy Medal, Matteucci Medal)"
-          discover="polonium (chemical element)"
-        ></Gallery>
-        <Gallery
-          name="Katsuko Saruhashi"
-          img={"YfeOqp2"}
-          profession="geochemist"
-          awards="(Miyake Prize for geochemistry, Tanaka Prize)"
-          discover="a method for measuring carbon dioxide in seawater"
-        ></Gallery>
+    <>
+      <div className="container">
+        <h1 className="text-center mb-5 mt-3 bg-info rounded-5">Notable Scientists</h1>
+        <div className="row row-cols-2 d-flex">
+          <div className="col-6">
+            <Gallery
+              name="Maria Skłodowska-Curie"
+              img="szV5sdG"
+              profession=" physicist and chemist"
+              awards="Awards: 4"
+              awardName="(Nobel Prize in Physics, Nobel Prize in Chemistry, Davy Medal,
+          Matteucci Medal)"
+              discovered="polonium (chemical element)"
+            />
+          </div>
+          <div className="col-6">
+            <Gallery
+              name="Katsuko Saruhashi"
+              img="YfeOqp2"
+              profession="geochemist"
+              awards="Awards: 2"
+              awardName="(Miyake Prize for geochemistry, Tanaka Prize)"
+              discovered="a method for measuring carbon dioxide in seawater"
+            />
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
-};
+}
 
 export default App;
